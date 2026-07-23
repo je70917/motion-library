@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CodePanel from '../../components/CodePanel.astro';
+import { CATEGORIES, getAllMotions, getMotionBySlug } from '../../lib/motions';
+
+export function getStaticPaths() {
+  return getAllMotions().map((motion) => ({
+    params: { slug: motion.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const motion = getMotionBySlug(slug!);
+
+if (!motion) {
+  throw new Error(`No motion found for slug "${slug}"`);
+}
+
+const categoryLabel = CATEGORIES.find((category) => category.key === motion.category)?.label ?? '';
+const defaultValues = Object.fromEntries(motion.params.map((param) => [param.key, param.default]));
+const code = motion.codeTemplates.css(defaultValues);
+---
+<BaseLayout title={`${motion.label} — Motion library`} description={motion.description}>
+  <div style="max-width: 720px; margin: 0 auto; padding: var(--space-8) var(--space-6) calc(var(--space-8) * 2);">
+    <a href="/" style="font-size: 13px;">← Back to library</a>
+
+    <div class="tag tag-outline" style="margin: var(--space-4) 0 var(--space-3); display: inline-flex;">{categoryLabel}</div>
+    <h1 style="margin-bottom: var(--space-2);">{motion.label}</h1>
+    <p style="opacity: 0.85; margin-bottom: var(--space-6);">{motion.description}</p>
+
+    <div class="blueprint" style="background: var(--color-surface); margin-bottom: var(--space-6);">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <Fragment set:html={motion.previewHtml} />
+      <style set:html={motion.previewCss}></style>
+    </div>
+
+    <h4 style="margin-bottom: var(--space-2);">Code</h4>
+    <CodePanel code={code} />
+  </div>
+</BaseLayout>

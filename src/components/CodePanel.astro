@@ -1,0 +1,31 @@
+---
+interface Props {
+  code: string;
+}
+
+const { code } = Astro.props;
+---
+<div class="code-panel" style="position: relative;">
+  <button type="button" class="btn btn-secondary copy-btn" style="position: absolute; top: var(--space-2); right: var(--space-2); font-size: 12px; padding: 5px 10px;">
+    <span class="copy-label">Copy</span>
+  </button>
+  <pre style="background: var(--color-neutral-900); color: var(--color-neutral-100); font-size: 12px; line-height: 1.6; padding: var(--space-3); overflow: auto; margin: 0; font-family: 'SF Mono', Consolas, monospace; white-space: pre-wrap;"><code>{code}</code></pre>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.copy-btn').forEach((button) => {
+    button.addEventListener('click', async () => {
+      const pre = button.parentElement?.querySelector('pre');
+      const text = pre?.textContent ?? '';
+      await navigator.clipboard.writeText(text);
+      const label = button.querySelector<HTMLSpanElement>('.copy-label');
+      if (label) {
+        const original = label.textContent;
+        label.textContent = 'Copied';
+        setTimeout(() => {
+          label.textContent = original;
+        }, 1500);
+      }
+    });
+  });
+</script>

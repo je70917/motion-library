@@ -1,0 +1,20 @@
+---
+import type { MotionDef } from '../data/types';
+
+interface Props {
+  motion: MotionDef;
+}
+
+const { motion } = Astro.props;
+---
+<a
+  href={`/motions/${motion.slug}`}
+  class="blueprint card"
+  style="background: var(--color-surface); cursor: pointer; text-decoration: none; color: inherit;"
+>
+  <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+  <Fragment set:html={motion.previewHtml} />
+  <div class="card-kicker">{motion.label}</div>
+  <p class="card-body">{motion.description}</p>
+  <style set:html={motion.previewCss}></style>
+</a>

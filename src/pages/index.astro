@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MotionCard from '../components/MotionCard.astro';
+import { CATEGORIES, getMotionsByCategory } from '../lib/motions';
+---
+<BaseLayout title="Motion library">
+  <div style="max-width: 1120px; margin: 0 auto; padding: var(--space-8) var(--space-6) calc(var(--space-8) * 2);">
+    <header style="margin-bottom: calc(var(--space-8) * 1.4); max-width: 640px;">
+      <div class="tag tag-outline" style="margin-bottom: var(--space-3);">Reference · v1</div>
+      <h1 style="margin-bottom: var(--space-3);">Motion library</h1>
+      <p style="font-size: 16px; opacity: 0.85; margin: 0;">
+        A working set of micro-interactions for the design team — soft, fluid timing applied to
+        the everyday states a UI needs: buttons, forms, loaders, overlays and notifications. Each
+        panel loops on its own — click one for the code.
+      </p>
+    </header>
+
+    {CATEGORIES.map((category, index) => (
+      <section
+        id={category.key}
+        style={`margin-bottom: ${index === CATEGORIES.length - 1 ? '0' : 'calc(var(--space-8) * 1.6)'}; scroll-margin-top: 64px;`}
+      >
+        <h6 style="color: var(--color-accent-700); margin-bottom: var(--space-1);">{category.eyebrow}</h6>
+        <h2 style="margin-bottom: var(--space-4);">{category.label}</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: var(--space-4);">
+          {getMotionsByCategory(category.key).map((motion) => (
+            <MotionCard motion={motion} />
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+</BaseLayout>
