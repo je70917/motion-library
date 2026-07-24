@@ -9,7 +9,7 @@ const { code } = Astro.props;
   <button type="button" class="btn btn-secondary copy-btn" style="position: absolute; top: var(--space-2); right: var(--space-2); font-size: 12px; padding: 5px 10px;">
     <span class="copy-label">Copy</span>
   </button>
-  <pre style="background: var(--color-neutral-900); color: var(--color-neutral-100); font-size: 12px; line-height: 1.6; padding: var(--space-3); overflow: auto; margin: 0; font-family: 'SF Mono', Consolas, monospace; white-space: pre-wrap;"><code>{code}</code></pre>
+  <pre style="background: var(--color-code-bg); color: var(--color-code-text); font-size: 12px; line-height: 1.6; padding: var(--space-3); overflow: auto; margin: 0; font-family: 'SF Mono', Consolas, monospace; white-space: pre-wrap;"><code>{code}</code></pre>
 </div>
 
 <script>
