@@ -13,7 +13,7 @@ export const toggleSwitch: MotionDef = {
   ],
   previewCss: `
     @keyframes toggleTrack { 0%,15% { background: var(--color-neutral-300);} 50%,85% { background: var(--color-accent);} 100% { background: var(--color-neutral-300);} }
-    @keyframes toggleKnob { 0%,15% { transform: translateX(0);} 50%,85% { transform: translateX(22px);} 100% { transform: translateX(0);} }
+    @keyframes toggleKnob { 0%,15% { transform: translateX(0);} 50%,85% { transform: translateX(20px);} 100% { transform: translateX(0);} }
   `,
   previewHtml: `
     <div style="height: 128px; display: flex; align-items: center; justify-content: center;">
@@ -26,6 +26,6 @@ export const toggleSwitch: MotionDef = {
     css: (values) => `.switch-track { transition: background ${values.duration}s ease-in-out; }
 .switch-track.on { background: var(--color-accent); }
 .switch-knob { transition: transform ${values.duration}s ease-in-out; }
-.switch-knob.on { transform: translateX(22px); }`,
+.switch-knob.on { transform: translateX(20px); }`,
   },
 };
