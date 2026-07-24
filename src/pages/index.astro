@@ -9,19 +9,32 @@ import { CATEGORIES, getMotionsByCategory } from '../lib/motions';
       <div class="tag tag-outline" style="margin-bottom: var(--space-3);">Reference · v1</div>
       <h1 style="margin-bottom: var(--space-3);">Motion library</h1>
       <p style="font-size: 16px; opacity: 0.85; margin: 0;">
-        A working set of micro-interactions for the design team — soft, fluid timing applied to
-        the everyday states a UI needs: buttons, forms, loaders, overlays and notifications. Each
-        panel loops on its own — click one for the code.
+        A set of micro-interactions for your components. Soft, fluid timing that makes everyday
+        UI states feel alive. Each panel loops on its own. Click one to grab the code.
       </p>
     </header>
+
+    <div style="position: sticky; top: 0; z-index: 10; background: var(--color-bg); display: flex; align-items: stretch; flex-wrap: wrap; border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider); margin-bottom: calc(var(--space-8) * 1.6);">
+      {CATEGORIES.map((category) => (
+        <a href={`#${category.key}`} class="filter-link" style="display: flex; align-items: center; color: inherit; text-decoration: none; font-size: 14px; font-family: var(--font-mono); padding: var(--space-3) var(--space-4);">{category.navLabel}</a>
+      ))}
+    </div>
+
+    <style>
+      .filter-link {
+        transition: background 0.15s ease-in-out;
+      }
+      .filter-link:hover {
+        background: var(--color-neutral-100);
+      }
+    </style>
 
     {CATEGORIES.map((category, index) => (
       <section
         id={category.key}
         style={`margin-bottom: ${index === CATEGORIES.length - 1 ? '0' : 'calc(var(--space-8) * 1.6)'}; scroll-margin-top: 64px;`}
       >
-        <h6 style="color: var(--color-accent-700); margin-bottom: var(--space-1);">{category.eyebrow}</h6>
-        <h2 style="margin-bottom: var(--space-4);">{category.label}</h2>
+        <h3 style="margin-bottom: var(--space-4);">{String(index + 1).padStart(2, '0')}. {category.label}</h3>
         <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: var(--space-4);">
           {getMotionsByCategory(category.key).map((motion) => (
             <MotionCard motion={motion} />

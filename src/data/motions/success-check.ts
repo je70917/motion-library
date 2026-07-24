@@ -8,18 +8,20 @@ export const successCheck: MotionDef = {
   params: [
     { key: 'duration', label: 'Ring duration', type: 'range', unit: 's', min: 0.4, max: 1.4, step: 0.05, default: 0.8, cssVar: '--duration' },
   ],
+  // A checkmark drawn from two independently-timed rotated bars only looks
+  // like a check once both bars finish — for a good chunk of the loop only
+  // one bar is visible, which reads as a stray diagonal line. A single SVG
+  // path with a stroke-draw animation reads correctly at every frame.
   previewCss: `
-    @keyframes checkA { 0%,20% { transform: rotate(45deg) scaleX(0);} 42%,100% { transform: rotate(45deg) scaleX(1);} }
-    @keyframes checkB { 0%,34% { transform: rotate(-48deg) scaleX(0);} 56%,100% { transform: rotate(-48deg) scaleX(1);} }
+    @keyframes checkDraw { 0%,20% { stroke-dashoffset: 1; } 68%,100% { stroke-dashoffset: 0; } }
     @keyframes checkRing { 0%,15% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent) 0%, transparent);} 45%,90% { box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);} 100% { box-shadow: 0 0 0 0 transparent;} }
   `,
   previewHtml: `
     <div style="height: 128px; display: flex; align-items: center; justify-content: center;">
       <div style="width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--color-accent); display: flex; align-items: center; justify-content: center; animation: checkRing 2.8s ease-out infinite;">
-        <div style="width: 14px; height: 9px; position: relative;">
-          <div style="position: absolute; width: 6px; height: 1.5px; background: var(--color-accent); left: 0; top: 5px; transform-origin: left center; animation: checkA 2.8s ease-out infinite;"></div>
-          <div style="position: absolute; width: 11px; height: 1.5px; background: var(--color-accent); left: 4px; top: 5px; transform-origin: left center; animation: checkB 2.8s ease-out infinite;"></div>
-        </div>
+        <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
+          <path d="M2 6.5L6.2 10.5L14 2" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" pathLength="1" style="stroke-dasharray: 1; stroke-dashoffset: 1; animation: checkDraw 2.8s ease-out infinite;" />
+        </svg>
       </div>
     </div>
   `,

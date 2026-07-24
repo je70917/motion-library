@@ -1,6 +1,7 @@
 ---
 import '../styles/tokens.css';
-import Nav from '../components/Nav.astro';
+// Nav is hidden for now — re-add `<Nav />` below the opening wrapper div to bring it back.
+// import Nav from '../components/Nav.astro';
 
 interface Props {
   title: string;
@@ -19,7 +20,6 @@ const { title, description = 'A working set of micro-interactions for design and
   </head>
   <body style="margin: 0;">
     <div style="background: var(--color-bg); min-height: 100vh; font-family: var(--font-body); color: var(--color-text);">
-      <Nav />
       <slot />
     </div>
   </body>

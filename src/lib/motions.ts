@@ -17,12 +17,12 @@ import { toastSlideIn } from '../data/motions/toast-slide-in';
 import { badgeBump } from '../data/motions/badge-bump';
 import { bannerPulse } from '../data/motions/banner-pulse';
 
-export const CATEGORIES: { key: MotionCategory; label: string; navLabel: string; eyebrow: string }[] = [
-  { key: 'buttons', label: 'Buttons & controls', navLabel: 'Buttons', eyebrow: '01 — Buttons & controls' },
-  { key: 'forms', label: 'Form feedback', navLabel: 'Form feedback', eyebrow: '02 — Form feedback' },
-  { key: 'loading', label: 'Loading & progress', navLabel: 'Loading', eyebrow: '03 — Loading & progress' },
-  { key: 'modals', label: 'Modals, drawers & sheets', navLabel: 'Modals & drawers', eyebrow: '04 — Modals & drawers' },
-  { key: 'notifications', label: 'Notifications & toasts', navLabel: 'Notifications', eyebrow: '05 — Notifications' },
+export const CATEGORIES: { key: MotionCategory; label: string; navLabel: string }[] = [
+  { key: 'buttons', label: 'Buttons & controls', navLabel: 'Buttons' },
+  { key: 'forms', label: 'Form feedback', navLabel: 'Form feedback' },
+  { key: 'loading', label: 'Loading & progress', navLabel: 'Loading' },
+  { key: 'modals', label: 'Modals, drawers & sheets', navLabel: 'Modals & drawers' },
+  { key: 'notifications', label: 'Notifications & toasts', navLabel: 'Notifications' },
 ];
 
 const ALL_MOTIONS: MotionDef[] = [

@@ -1,9 +1,5 @@
 ---
-import { CATEGORIES } from '../lib/motions';
 ---
 <div class="nav" style="position: sticky; top: 0; z-index: 10; background: var(--color-bg); border-bottom: 1px solid var(--color-divider); flex-wrap: wrap;">
   <a href="/" class="nav-brand" style="text-decoration: none; color: inherit;">Motion Library</a>
-  {CATEGORIES.map((category) => (
-    <a href={`/#${category.key}`}>{category.navLabel}</a>
-  ))}
 </div>
