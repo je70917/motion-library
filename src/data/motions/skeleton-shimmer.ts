@@ -4,7 +4,7 @@ export const skeletonShimmer: MotionDef = {
   slug: 'skeleton-shimmer',
   label: 'Skeleton shimmer',
   category: 'loading',
-  description: 'Placeholder blocks for content that hasn\'t arrived yet — implies "still loading," not "empty."',
+  description: 'Placeholder blocks for content that hasn\'t arrived yet. It implies "still loading," not "empty."',
   params: [
     { key: 'duration', label: 'Duration', type: 'range', unit: 's', min: 1, max: 4, step: 0.1, default: 2.4, cssVar: '--duration' },
   ],

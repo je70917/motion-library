@@ -4,7 +4,7 @@ export const spinner: MotionDef = {
   slug: 'spinner',
   label: 'Spinner',
   category: 'loading',
-  description: 'A rotating crosshair rather than a ring — reads as instrumentation, not a stock loader.',
+  description: 'A rotating crosshair rather than a ring reads as instrumentation, not a stock loader.',
   params: [
     { key: 'duration', label: 'Rotation duration', type: 'range', unit: 's', min: 0.6, max: 3, step: 0.1, default: 1.6, cssVar: '--duration' },
   ],

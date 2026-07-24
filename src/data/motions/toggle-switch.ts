@@ -4,7 +4,7 @@ export const toggleSwitch: MotionDef = {
   slug: 'toggle-switch',
   label: 'Toggle switch',
   category: 'buttons',
-  description: 'Track color and knob position ease together — never snap a switch between states.',
+  description: 'Track color and knob position ease together. Never snap a switch between states.',
   // Demo loops the on/off cycle every 3s purely for visibility; the real
   // transition below is much snappier.
   params: [

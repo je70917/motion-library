@@ -4,7 +4,7 @@ export const successCheck: MotionDef = {
   slug: 'success-check',
   label: 'Success check',
   category: 'forms',
-  description: 'The check draws stroke-by-stroke after a valid save — a small reward beat, not just a static icon swap.',
+  description: 'The check draws stroke-by-stroke after a valid save, a small reward beat, not just a static icon swap.',
   params: [
     { key: 'duration', label: 'Ring duration', type: 'range', unit: 's', min: 0.4, max: 1.4, step: 0.05, default: 0.8, cssVar: '--duration' },
   ],

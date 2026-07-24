@@ -4,7 +4,7 @@ export const progressFill: MotionDef = {
   slug: 'progress-fill',
   label: 'Progress fill',
   category: 'loading',
-  description: 'Eased fill rather than linear — it starts eager and settles in, matching how real transfers feel.',
+  description: 'Eased fill rather than linear. It starts eager and settles in, matching how real transfers feel.',
   params: [
     { key: 'duration', label: 'Fill duration', type: 'range', unit: 's', min: 0.2, max: 1.2, step: 0.05, default: 0.6, cssVar: '--duration' },
   ],

@@ -4,7 +4,7 @@ export const hoverGlow: MotionDef = {
   slug: 'hover-glow',
   label: 'Hover glow',
   category: 'buttons',
-  description: 'Primary CTAs — a soft radial bloom signals "clickable" without a hard color swap.',
+  description: 'For primary CTAs, a soft radial bloom signals "clickable" without a hard color swap.',
   params: [
     { key: 'duration', label: 'Duration', type: 'range', unit: 's', min: 1, max: 5, step: 0.1, default: 2.6, cssVar: '--duration' },
   ],

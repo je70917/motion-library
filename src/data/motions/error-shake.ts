@@ -4,7 +4,7 @@ export const errorShake: MotionDef = {
   slug: 'error-shake',
   label: 'Error shake',
   category: 'forms',
-  description: 'A short horizontal shake on invalid submit — brief enough to read as feedback, not an alarm.',
+  description: 'A short horizontal shake on invalid submit, brief enough to read as feedback, not an alarm.',
   params: [
     { key: 'duration', label: 'Shake duration', type: 'range', unit: 's', min: 0.2, max: 0.8, step: 0.01, default: 0.4, cssVar: '--duration' },
   ],

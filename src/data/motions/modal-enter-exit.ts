@@ -4,7 +4,7 @@ export const modalEnterExit: MotionDef = {
   slug: 'modal-enter-exit',
   label: 'Modal enter/exit',
   category: 'modals',
-  description: "Scale up from 92% with a slight rise — a modal should feel like it's arriving, not appearing.",
+  description: "Scale up from 92% with a slight rise, so a modal feels like it's arriving, not appearing.",
   params: [
     { key: 'duration', label: 'Duration', type: 'range', unit: 's', min: 0.15, max: 0.6, step: 0.01, default: 0.35, cssVar: '--duration' },
   ],

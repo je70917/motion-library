@@ -4,7 +4,7 @@ export const drawerSlide: MotionDef = {
   slug: 'drawer-slide',
   label: 'Drawer slide',
   category: 'modals',
-  description: "Panels enter from the edge they're anchored to — right for detail, bottom for sheets — never fade in place.",
+  description: "Panels enter from the edge they're anchored to: right for detail, bottom for sheets. Never fade in place.",
   params: [
     { key: 'duration', label: 'Duration', type: 'range', unit: 's', min: 0.15, max: 0.6, step: 0.01, default: 0.35, cssVar: '--duration' },
   ],

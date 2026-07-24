@@ -4,7 +4,7 @@ export const toastSlideIn: MotionDef = {
   slug: 'toast-slide-in',
   label: 'Toast slide-in',
   category: 'notifications',
-  description: 'Rises from the edge, holds long enough to read, then eases back out — never a hard cut.',
+  description: 'Rises from the edge, holds long enough to read, then eases back out. Never a hard cut.',
   params: [
     { key: 'duration', label: 'Duration', type: 'range', unit: 's', min: 1.5, max: 5, step: 0.1, default: 3, cssVar: '--duration' },
   ],
