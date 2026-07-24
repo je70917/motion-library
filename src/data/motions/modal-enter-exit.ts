@@ -5,6 +5,7 @@ export const modalEnterExit: MotionDef = {
   label: 'Modal enter/exit',
   category: 'modals',
   description: "Scale up from 92% with a slight rise, so a modal feels like it's arriving, not appearing.",
+  why: "A modal that just appears (opacity 0 to 1, no movement) can feel like it materialized from nowhere, disorienting relative to whatever the user was just looking at. Scaling up from slightly smaller with a slight rise mimics the modal coming toward the viewer, giving spatial continuity between the page underneath and the new layer on top of it.",
   params: [
     { key: 'duration', label: 'Duration', type: 'range', unit: 's', min: 0.15, max: 0.6, step: 0.01, default: 0.35, cssVar: '--duration' },
   ],

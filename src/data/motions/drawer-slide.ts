@@ -5,6 +5,7 @@ export const drawerSlide: MotionDef = {
   label: 'Drawer slide',
   category: 'modals',
   description: "Panels enter from the edge they're anchored to: right for detail, bottom for sheets. Never fade in place.",
+  why: "Motion from a specific edge tells the user where this panel lives and where it'll return to when dismissed, reinforcing a mental model of the interface as a spatial system with panels tucked off-screen, not a stack of unrelated views. A fade-in-place drawer would still technically work, but it throws away that spatial cue for free.",
   params: [
     { key: 'duration', label: 'Duration', type: 'range', unit: 's', min: 0.15, max: 0.6, step: 0.01, default: 0.35, cssVar: '--duration' },
   ],

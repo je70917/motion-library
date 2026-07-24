@@ -5,6 +5,7 @@ export const bannerPulse: MotionDef = {
   label: 'Banner pulse',
   category: 'notifications',
   description: 'A slow inner glow keeps a persistent banner from feeling inert without demanding constant attention.',
+  why: 'Unlike a toast, a persistent banner has to stay noticeable without becoming visual noise the user tunes out entirely, a version of banner blindness. A slow, subtle inner glow keeps it from reading as fully dead UI while staying calm enough not to compete with whatever task the user is actually focused on, a middle ground between static and distracting.',
   params: [
     { key: 'duration', label: 'Duration', type: 'range', unit: 's', min: 1, max: 4, step: 0.1, default: 2.4, cssVar: '--duration' },
   ],

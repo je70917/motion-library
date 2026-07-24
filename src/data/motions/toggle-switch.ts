@@ -5,6 +5,7 @@ export const toggleSwitch: MotionDef = {
   label: 'Toggle switch',
   category: 'buttons',
   description: 'Track color and knob position ease together. Never snap a switch between states.',
+  why: 'An instant flip reads as a UI glitch rather than an intentional toggle. Material Design and Apple\'s HIG both animate the thumb slide and color change together by default, no system switch component ships a "snap" variant. Eased motion here follows classic "slow in, slow out" animation principles: it gives the eye time to register what changed and that the user caused it.',
   // Demo loops the on/off cycle every 3s purely for visibility; the real
   // transition below is much snappier.
   params: [

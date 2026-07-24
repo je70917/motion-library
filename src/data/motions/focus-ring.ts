@@ -5,6 +5,7 @@ export const focusRing: MotionDef = {
   label: 'Focus ring',
   category: 'forms',
   description: 'Border and outline ease in together on focus so keyboard navigation feels deliberate, not jumpy.',
+  why: 'Keyboard navigation jumps between fields with no cursor to track, the focus indicator is the only way a keyboard user knows where they are. An eased border/ring change is easier to follow through peripheral vision as focus moves field to field than an instant, hard-edged outline. This also ties directly to WCAG guidance that focus indication must be clearly visible.',
   params: [
     { key: 'duration', label: 'Transition duration', type: 'range', unit: 's', min: 0.1, max: 0.6, step: 0.01, default: 0.25, cssVar: '--duration' },
   ],

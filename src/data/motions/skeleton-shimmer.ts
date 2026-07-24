@@ -5,6 +5,7 @@ export const skeletonShimmer: MotionDef = {
   label: 'Skeleton shimmer',
   category: 'loading',
   description: 'Placeholder blocks for content that hasn\'t arrived yet. It implies "still loading," not "empty."',
+  why: 'An empty content area is ambiguous: is this broken, or just not loaded yet? Skeleton blocks establish the layout in advance, reducing the jump when real content arrives, and the shimmer sweep specifically signals "actively loading," which a static gray placeholder can\'t do on its own (it can read as a permanent empty state instead).',
   params: [
     { key: 'duration', label: 'Duration', type: 'range', unit: 's', min: 1, max: 4, step: 0.1, default: 2.4, cssVar: '--duration' },
   ],

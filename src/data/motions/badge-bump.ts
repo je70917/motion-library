@@ -5,6 +5,7 @@ export const badgeBump: MotionDef = {
   label: 'Badge bump',
   category: 'notifications',
   description: 'A quick overscale-and-settle on the count draws the eye to a new arrival without a full re-layout.',
+  why: 'A count badge that just updates its number can go unnoticed, especially in a busy toolbar competing for attention. The brief overscale-and-settle is a "pop," a physical exaggeration cue used throughout animation to draw the eye to one small point of change, without needing a color flash or a separate alert to do the same job.',
   params: [
     { key: 'duration', label: 'Duration', type: 'range', unit: 's', min: 0.2, max: 1, step: 0.05, default: 0.5, cssVar: '--duration' },
   ],

@@ -5,6 +5,7 @@ export const successCheck: MotionDef = {
   label: 'Success check',
   category: 'forms',
   description: 'The check draws stroke-by-stroke after a valid save, a small reward beat, not just a static icon swap.',
+  why: 'A static checkmark icon swap is easy to miss, especially right after a save when attention may have already moved elsewhere. A check that visibly draws itself gives the eye a distinct moment to catch mid-action, closing the loop on what the user just did instead of silently updating an icon in the background.',
   params: [
     { key: 'duration', label: 'Ring duration', type: 'range', unit: 's', min: 0.4, max: 1.4, step: 0.05, default: 0.8, cssVar: '--duration' },
   ],

@@ -39,6 +39,8 @@ export interface MotionDef {
   label: string;
   category: MotionCategory;
   description: string;
+  /** The perceptual/design reasoning behind the motion, shown under the code panel. */
+  why: string;
   params: ParamDef[];
   /** @keyframes block(s) for the autoplay preview. Written against var(--x, default) so a future live-controls milestone can drive them without rewriting this CSS. */
   previewCss: string;

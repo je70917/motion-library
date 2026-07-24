@@ -5,6 +5,7 @@ export const spinner: MotionDef = {
   label: 'Spinner',
   category: 'loading',
   description: 'A rotating crosshair rather than a ring reads as instrumentation, not a stock loader.',
+  why: 'Continuous rotation communicates "still working, not stuck" for as long as it runs, which matters because the alternative, a static loading icon, is indistinguishable from a frozen or broken UI. A crosshair rather than a solid ring or dots stays legibly asymmetric in motion even at a glance, instead of blurring into a plain circle.',
   params: [
     { key: 'duration', label: 'Rotation duration', type: 'range', unit: 's', min: 0.6, max: 3, step: 0.1, default: 1.6, cssVar: '--duration' },
   ],

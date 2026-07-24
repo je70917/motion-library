@@ -5,6 +5,7 @@ export const backdropFade: MotionDef = {
   label: 'Backdrop fade',
   category: 'modals',
   description: 'The scrim eases in just ahead of its overlay so focus shifts before the modal itself moves.',
+  why: "Dimming the background before the modal fully arrives sequences the user's attention instead of demanding it all at once: the eye is nudged away from the page and toward the incoming layer a beat before there's anything new to look at. It's the same reason a dimmed house light before a stage cue works, direct attention first, then reveal.",
   params: [
     { key: 'duration', label: 'Duration', type: 'range', unit: 's', min: 0.1, max: 0.6, step: 0.01, default: 0.3, cssVar: '--duration' },
   ],

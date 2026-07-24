@@ -5,6 +5,7 @@ export const hoverGlow: MotionDef = {
   label: 'Hover glow',
   category: 'buttons',
   description: 'For primary CTAs, a soft radial bloom signals "clickable" without a hard color swap.',
+  why: 'A hard color swap on hover is a state flip, easy to miss if attention is elsewhere on the screen. A glow that grows in over time draws the eye through the motion itself, giving a beat of "this is interactive" before the user commits. That matters most on primary actions, where hesitation right before clicking is common.',
   params: [
     { key: 'duration', label: 'Duration', type: 'range', unit: 's', min: 1, max: 5, step: 0.1, default: 2.6, cssVar: '--duration' },
   ],

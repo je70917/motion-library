@@ -5,6 +5,7 @@ export const errorShake: MotionDef = {
   label: 'Error shake',
   category: 'forms',
   description: 'A short horizontal shake on invalid submit, brief enough to read as feedback, not an alarm.',
+  why: 'A head-shake gesture for "no" is legible across cultures without needing to read any text, it registers before the error message even finishes rendering. Keeping the shake under half a second is what keeps it reading as an emphatic gesture instead of an alarming or glitchy repeated wobble.',
   params: [
     { key: 'duration', label: 'Shake duration', type: 'range', unit: 's', min: 0.2, max: 0.8, step: 0.01, default: 0.4, cssVar: '--duration' },
   ],

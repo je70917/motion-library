@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CodePanel from '../../components/CodePanel.astro';
-import { getAllMotions, getMotionBySlug } from '../../lib/motions';
+import { getAllMotions, getMotionBySlug, getNextMotion, getPreviousMotion } from '../../lib/motions';
 
 export function getStaticPaths() {
   return getAllMotions().map((motion) => ({
@@ -18,6 +18,8 @@ if (!motion) {
 
 const defaultValues = Object.fromEntries(motion.params.map((param) => [param.key, param.default]));
 const code = motion.codeTemplates.css(defaultValues);
+const nextMotion = getNextMotion(motion.slug);
+const previousMotion = getPreviousMotion(motion.slug);
 ---
 <BaseLayout title={`${motion.label} — Motion library`} description={motion.description}>
   <div style="max-width: 720px; margin: 0 auto; padding: var(--space-8) var(--space-6) calc(var(--space-8) * 2);">
@@ -33,5 +35,13 @@ const code = motion.codeTemplates.css(defaultValues);
 
     <h4 style="margin-bottom: var(--space-2);">Code</h4>
     <CodePanel code={code} />
+
+    <h4 style="margin: calc(var(--space-8) * 1.5) 0 var(--space-2);">Why this works</h4>
+    <p style="opacity: 0.65; margin: 0 0 var(--space-8);">{motion.why}</p>
+
+    <div style="display: flex; justify-content: space-between; padding-top: var(--space-4); border-top: 1px solid var(--color-divider);">
+      <a href={`/motions/${previousMotion.slug}`} style="font-size: 13px; text-decoration: none;">← Prev: {previousMotion.label}</a>
+      <a href={`/motions/${nextMotion.slug}`} style="font-size: 13px; text-decoration: none;">Next: {nextMotion.label} →</a>
+    </div>
   </div>
 </BaseLayout>

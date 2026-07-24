@@ -5,6 +5,7 @@ export const progressFill: MotionDef = {
   label: 'Progress fill',
   category: 'loading',
   description: 'Eased fill rather than linear. It starts eager and settles in, matching how real transfers feel.',
+  why: 'A linear fill implies constant, predictable throughput, which is rarely how real transfers behave, they start fast and taper off as buffers and handshakes finish. An eased fill sets expectations closer to reality instead of feeling like it\'s lying to the user, and it avoids the classic complaint of progress bars that appear to stall right near the end.',
   params: [
     { key: 'duration', label: 'Fill duration', type: 'range', unit: 's', min: 0.2, max: 1.2, step: 0.05, default: 0.6, cssVar: '--duration' },
   ],

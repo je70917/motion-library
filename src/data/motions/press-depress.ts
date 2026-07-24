@@ -5,6 +5,7 @@ export const pressDepress: MotionDef = {
   label: 'Press depress',
   category: 'buttons',
   description: 'A quick compress on tap confirms the click registered before the async result returns.',
+  why: 'There\'s always a gap between a tap and its result, network latency, async work, a page transition. That gap is where users lose confidence a click even registered. A compress-and-release on press closes it instantly, before any server response, the same job a physical button\'s tactile click does.',
   // Note: the demo loop below runs on its own fixed 2.4s cycle purely so the
   // gallery card stays visible without a real click — that cycle length is
   // independent of `duration`, which is the real one-shot :active duration.

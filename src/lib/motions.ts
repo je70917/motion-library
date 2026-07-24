@@ -55,3 +55,15 @@ export function getMotionBySlug(slug: string): MotionDef | undefined {
 export function getMotionsByCategory(category: MotionCategory): MotionDef[] {
   return ALL_MOTIONS.filter((motion) => motion.category === category);
 }
+
+/** The next motion in gallery order, wrapping back to the first after the last. */
+export function getNextMotion(slug: string): MotionDef {
+  const index = ALL_MOTIONS.findIndex((motion) => motion.slug === slug);
+  return ALL_MOTIONS[(index + 1) % ALL_MOTIONS.length];
+}
+
+/** The previous motion in gallery order, wrapping to the last before the first. */
+export function getPreviousMotion(slug: string): MotionDef {
+  const index = ALL_MOTIONS.findIndex((motion) => motion.slug === slug);
+  return ALL_MOTIONS[(index - 1 + ALL_MOTIONS.length) % ALL_MOTIONS.length];
+}

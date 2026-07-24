@@ -5,6 +5,7 @@ export const toastSlideIn: MotionDef = {
   label: 'Toast slide-in',
   category: 'notifications',
   description: 'Rises from the edge, holds long enough to read, then eases back out. Never a hard cut.',
+  why: "A toast is, by design, information the user didn't ask for in that moment. Motion catches peripheral attention more reliably than a static appearance would, without requiring an interrupting modal. Easing back out rather than vanishing instantly also avoids a jarring \"did I miss something\" moment if the eye was still on it when it left.",
   params: [
     { key: 'duration', label: 'Duration', type: 'range', unit: 's', min: 1.5, max: 5, step: 0.1, default: 3, cssVar: '--duration' },
   ],

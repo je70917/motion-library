@@ -5,6 +5,7 @@ export const iconRipple: MotionDef = {
   label: 'Icon button ripple',
   category: 'buttons',
   description: 'A single expanding ring reads as "action sent" on icon-only controls with no label to react.',
+  why: 'Icon-only buttons have no text state to change after a click, so there\'s nothing new to read besides the icon itself, which usually doesn\'t change either. An expanding, fading ring borrows a widely legible physical metaphor (a ripple on water, a radar ping) for "a pulse of action went out from this point," giving feedback without inventing new iconography.',
   params: [
     { key: 'duration', label: 'Duration', type: 'range', unit: 's', min: 1, max: 4, step: 0.1, default: 2.2, cssVar: '--duration' },
   ],
