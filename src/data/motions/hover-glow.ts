@@ -21,7 +21,8 @@ export const hoverGlow: MotionDef = {
     </div>
   `,
   codeTemplates: {
-    css: (values) => `.btn-primary {
+    css: (values) => `.btn-primary:hover,
+.btn-primary:focus-visible {
   animation: btnGlow ${values.duration}s ease-in-out infinite;
 }
 @keyframes btnGlow {

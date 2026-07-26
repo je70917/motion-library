@@ -24,7 +24,11 @@ export const iconRipple: MotionDef = {
     </div>
   `,
   codeTemplates: {
-    css: (values) => `.icon-btn::after {
+    css: (values) => `.icon-btn {
+  position: relative;
+}
+.icon-btn:hover::after,
+.icon-btn:focus-visible::after {
   content: "";
   position: absolute; inset: 0;
   border: 1.5px solid var(--color-accent);
