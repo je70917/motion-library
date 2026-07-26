@@ -34,8 +34,9 @@ export const successCheck: MotionDef = {
   animation: draw ${(Number(values.duration) * 0.6).toFixed(2)}s ease-out .2s forwards;
 }
 @keyframes checkRing {
-  from { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent) 30%, transparent); }
-  to { box-shadow: 0 0 0 4px transparent; }
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent) 0%, transparent); }
+  40% { box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 25%, transparent); }
+  100% { box-shadow: 0 0 0 6px transparent; }
 }
 @keyframes draw { to { stroke-dashoffset: 0; } }`,
   },
