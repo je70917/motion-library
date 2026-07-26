@@ -23,7 +23,7 @@ export const modalEnterExit: MotionDef = {
   `,
   codeTemplates: {
     css: (values) => `.modal {
-  animation: modalPop ${values.duration}s cubic-bezier(.22,1,.36,1);
+  animation: modalPop ${values.duration}s ease-in-out;
 }
 @keyframes modalPop {
   from { opacity: 0; transform: scale(0.92) translateY(6px); }

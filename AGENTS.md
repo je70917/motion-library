@@ -45,6 +45,12 @@ reference/                  # original .dc.html prototype this was rebuilt from,
 - Only create git commits when the user asks for one.
 - The design tokens (`src/styles/tokens.css`) are the single source of truth for the look, a restyle should mean editing values there, not touching component structure.
 
+## QA
+
+`qa/demo-vs-shipped.html` is a standalone (no build step, just open it in a browser) side-by-side comparison of all 16 motions: the autoplay demo next to the actual shipped Code-panel snippet applied to real markup, with interactive triggers for anything that's hover/click/focus-gated. It's hand-authored, not generated from the source files, so if a motion's `previewHtml`/`previewCss`/`codeTemplates.css` changes, this file needs a matching manual update or it'll drift and stop being trustworthy. It's excluded from the Astro build (lives outside `src/` and `public/`), so it never ships with the site.
+
+This is how several real bugs got caught that a build/type-check couldn't: success-check's missing `@keyframes checkRing`, hover-glow/icon-ripple animating unconditionally instead of on `:hover`, easing mismatches between demo and shipped (modal-enter-exit, drawer-slide), and a missing error-shake label. Worth re-running this whenever a motion's CSS changes.
+
 ## Roadmap
 
 - **V1 (done)**: gallery + per-motion pages, static preview, copy-to-clipboard code panel

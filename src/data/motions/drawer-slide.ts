@@ -28,7 +28,7 @@ export const drawerSlide: MotionDef = {
   codeTemplates: {
     css: (values) => `.drawer {
   transform: translateX(100%);
-  transition: transform ${values.duration}s cubic-bezier(.32,.72,0,1);
+  transition: transform ${values.duration}s ease-in-out;
 }
 .drawer.open { transform: translateX(0); }`,
   },

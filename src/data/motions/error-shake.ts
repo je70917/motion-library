@@ -20,13 +20,30 @@ export const errorShake: MotionDef = {
     </div>
   `,
   codeTemplates: {
-    css: (values) => `.input.invalid { animation: errorShake ${values.duration}s ease-in-out; }
+    css: (values) => `.input {
+  transition: border-color 0.2s ease-in-out;
+}
+.input.invalid {
+  border-color: var(--color-accent-700);
+  animation: errorShake ${values.duration}s ease-in-out;
+}
 @keyframes errorShake {
   0%, 100% { transform: translateX(0); }
   20% { transform: translateX(-7px); }
   40% { transform: translateX(6px); }
   60% { transform: translateX(-5px); }
   80% { transform: translateX(3px); }
+}
+
+.field-error {
+  opacity: 0;
+}
+.field-error.show {
+  animation: errorLabelIn 0.3s ease-in-out forwards;
+}
+@keyframes errorLabelIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }`,
   },
 };
